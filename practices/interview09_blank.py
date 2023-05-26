@@ -1,5 +1,5 @@
 '''
-    What will be print on screen ?
+    What will be printed on screen ?
 '''
 class E(Exception):
 
