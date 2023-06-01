@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 '''
     Shows the differences between 'strptime' and 'strftime' from 'datetime' and 'time' modules
 '''
-=======
->>>>>>> origin/main
 import datetime
 import time
 
