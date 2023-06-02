@@ -282,3 +282,12 @@
 # print(f'decimal={value:06} : binaire={value:012b} : hexa={value:#06x} : octo={value:#2o} : float={value:2.2f} ')
 # value = 123456.789
 # print(f'scientific={value:#2g} <> expo={value:#2e} : system={value:#n}')
+
+#18 ************** Convert a matrix into list of index ***********************
+# def graph_matrix_to_list(m):
+#     '''
+#     >>> graph_matrix_to_list([[False,True],[False,False]])
+#     [[1], []]
+#     >>> graph_matrix_to_list([[False, True, True],[ True, False, False],[ True, True, False]])
+#     [[1, 2], [0], [0, 1]]
+#     '''

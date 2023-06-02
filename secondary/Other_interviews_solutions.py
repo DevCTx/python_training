@@ -428,3 +428,19 @@
 # print(f'float={value:10.2f}')
 # print(f'scientific={value:#2g} <> expo={value:#2e}')
 # print(f'system={value:#n}')
+
+#18 ************** Convert a matrix into list of index ***********************
+# def graph_matrix_to_list(m):
+#     '''
+#     >>> graph_matrix_to_list([[False,True],[False,False]])
+#     [[1], []]
+#     >>> graph_matrix_to_list([[False, True, True],[ True, False, False],[ True, True, False]])
+#     [[1, 2], [0], [0, 1]]
+#     '''
+#     l=[]
+#     for ridx,r in enumerate(m):
+#         l.append([])
+#         for cidx,c in enumerate(r) :
+#             if c == True:
+#                 l[ridx].append(cidx)
+#     return l
