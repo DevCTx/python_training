@@ -1,3 +1,6 @@
+import bisect
+
+
 def closest_lt_or_eq(obj_list, val):
     '''
     Returns the closest value to obj_list that is less than or equal to the number val else None
@@ -5,6 +8,8 @@ def closest_lt_or_eq(obj_list, val):
     >>> print(closest_lt_or_eq([1,2,4,7,12],1))
     1
     >>> print(closest_lt_or_eq([1,2,4,7,12],4))
+    4
+    >>> print(closest_lt_or_eq([1,2,4,7,12],5))
     4
     >>> print(closest_lt_or_eq([1,2,4,7,12],6))
     4
@@ -15,27 +20,32 @@ def closest_lt_or_eq(obj_list, val):
     >>> print(closest_lt_or_eq([1,2,4,7,12],-1))
     None
     '''
-
-    if obj_list is None or len(obj_list)==0 or val==None or val<0:
+    #
+    # if obj_list is None or len(obj_list)==0 or val==None or val<obj_list[0]:
+    #     return None
+    #
+    # min = None
+    #
+    # for idx,value in enumerate(obj_list):
+    #     if value == val:
+    #         min = value
+    #         break
+    #     elif value > val :
+    #         min = obj_list[idx - 1]
+    #         break
+    #
+    # return min
+    if not obj_list or len(obj_list) == 0 or not val or val < obj_list[0] or val > obj_list[-1]:
         return None
+    else:
+        return obj_list[ bisect.bisect(obj_list, val) - 1]
 
-    min = None
-
-    for idx,value in enumerate(obj_list):
-        if value == val:
-            min = value
-            break
-        elif value > val :
-            min = obj_list[idx - 1]
-            break
-    
-    return min
-
-
-def largest_one_lt( liste, val ):
+def largest_one_lt( obj_list, val ):
     '''
     >>> print(largest_one_lt([1,4,7,12], 1))        # nb pairs, val min
     None
+    >>> print(largest_one_lt([1,4,7,12], 3))        # nb pairs, val min
+    1
     >>> print(largest_one_lt([1,4,7,12], 12))       # nb pairs, val max
     7
     >>> print(largest_one_lt([1,4,7,12], 7))        # nb pairs, val existante
@@ -95,22 +105,25 @@ def largest_one_lt( liste, val ):
     >>> print(largest_one_lt([1,3,4,5,7,8,9,12,13,14,16,17,18,20,22,24,26,27,29], 30))  # nb impairs, val supérieure
     29
     '''
-    left = 0
-    right = len(liste)-1
+    # left = 0
+    # right = len(obj_list)-1
+    #
+    # result = None
+    # while left <= right and obj_list and val > obj_list[0]:
+    #     mid = (left + right)//2
+    #     if val <= obj_list[mid]:
+    #         right = mid - 1
+    #     else:
+    #         result = obj_list[mid]
+    #         left = mid + 1
+    #
+    # return result
+    if obj_list is None or len(obj_list) == 0 or val is None or val<=obj_list[0]:
+        return None
+    return obj_list[bisect.bisect_left(obj_list,val) -1 ]
 
-    result = None
-    while left <= right and liste and val > liste[0]:
-        mid = (left + right)//2
-        if val <= liste[mid]:
-            right = mid - 1
-        else:
-            result = liste[mid]
-            left = mid + 1
 
-    return result
-
-
-def smallest_one_gt( liste, val ):
+def smallest_one_gt( obj_list, val ):
     '''
     >>> print(smallest_one_gt([1,4,7,12], 1))        # nb pairs, val min
     4
@@ -173,22 +186,22 @@ def smallest_one_gt( liste, val ):
     >>> print(smallest_one_gt([1,3,4,5,7,8,9,12,13,14,16,17,18,20,22,24,26,27,29], 30))  # nb impairs, val supérieure
     None
     '''
-    left = 0
-    right = len(liste)-1
-
-    result = None                                       # [1,4,5,7,12]  7
-    while left <= right and liste and val < liste[-1]:  # 4 <= 3
-        mid = (left + right)//2                         # (3+3)//2=3
-        if val < liste[mid]:       # First part         # 7 < 7
-            result = liste[mid]                         # 12
-            right = mid - 1                             # 3
-        else:                       # Second part       #
-            left = mid + 1                              # 4
-
-    return result
-
-
-
+    # left = 0
+    # right = len(obj_list)-1
+    #
+    # result = None                                       # [1,4,5,7,12]  7
+    # while left <= right and obj_list and val < obj_list[-1]:  # 4 <= 3
+    #     mid = (left + right)//2                         # (3+3)//2=3
+    #     if val < obj_list[mid]:       # First part         # 7 < 7
+    #         result = obj_list[mid]                         # 12
+    #         right = mid - 1                             # 3
+    #     else:                       # Second part       #
+    #         left = mid + 1                              # 4
+    #
+    # return result
+    if obj_list is None or len(obj_list) == 0 or val is None or val>=obj_list[-1]:
+        return None
+    return obj_list[ bisect.bisect_right(obj_list,val) ]
 
 
 
