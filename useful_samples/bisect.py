@@ -1,3 +1,7 @@
+'''
+    A faster way to find an index into a sorted list
+    Can be also used to insert a value into a sorted list at the index to be already sorted
+'''
 import bisect
 
 def largest_one_lt(obj_list, val):
