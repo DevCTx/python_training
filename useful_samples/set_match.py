@@ -1,5 +1,5 @@
 '''
-Finds duplicates into set
+    Finds duplicates into set
 '''
 
 set_list = [

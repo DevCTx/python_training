@@ -42,7 +42,7 @@ print()
 print("\nA BIT MORE COMPLICATED")
 # Search for a word-characters duplicated 0 to multiple times followed by a space duplicated 0 to multiple times
 # in a group duplicated 0 to multiple times (meaning looking for words ...)
-# and followed by a '!' character in a group duplicated 0 to multiple times (meaning an exclamation sentences ...)
+# and followed by a '!' character in a group duplicated 0 to multiple times (meaning an exclamation sentence ...)
 question = "Lovely world! Wonderful world!"
 print(question)
 print(re.match(r"((\w*\s*)*!)*",question))       # Returns the match with the two sentences
@@ -117,7 +117,7 @@ print(match['second'])      # displays the 'second' group (idem)    # two
 
 match = re.search(r"(?P<first>\w+), (?:\w+), (?P<third>\w+)", content)
 print('\n',match)           # <re.Match object; span=(19, 34), match='one, two, three'>     # Match Idem
-print(match.groups())       # ('one', 'three')                          # But does not registered the group with '?:'
+print(match.groups())       # ('one', 'three')                          # But does not register the group with '?:'
 print(match.group(1))       # displays the first registered group       # one
 print(match.group(2))       # displays the second registered group      # three
 print(match.group(0))       # displays ALL groups (only two)            # one, three

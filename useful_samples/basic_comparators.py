@@ -3,7 +3,7 @@ print()
 print("A" < "a")    #True
 print("0" < "A")    #True
 print(" " < "A")    #True
-print(" " < "0")    #True
+print(" " < "0")    #True       " ","0","A","a"
 # ' 0Aa'
 print(1.0 == 1)     #True
 print("1" == 1)     #False

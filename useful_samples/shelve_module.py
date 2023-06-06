@@ -1,6 +1,6 @@
 '''
-Creates files similar to dictionary but on a disk and not in memory
-Equivalent to a very simplified BDD
+    Creates files similar to dictionary but on a disk and not in memory
+    Equivalent to a very simplified BDD
 '''
 import os
 import shelve

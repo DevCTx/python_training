@@ -2,7 +2,6 @@
     Kind of tricky ways to build strings, tuples or lists
     Careful to 'AAPL', which is considered as str in a tuple # tuple('AAPL',)    = ('A', 'A', 'P', 'L') <class 'tuple'>
     but considered as tuple alone                            # 'AAPL',           = ('AAPL',)            <class 'tuple'>
-
 '''
 
 # 'AAPL'            = AAPL                 <class 'str'>

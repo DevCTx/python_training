@@ -20,5 +20,3 @@ class PowersOfTwo:
 powers = PowersOfTwo(4)
 for power in powers:
     print(power)
-
-print(powers.func())

@@ -18,7 +18,7 @@ def is_prime(n):
         return False
     else:
         for i in range( 2, int(math.sqrt(n))+1 ):
-            if (n%i) == 0:
+            if (n % i) == 0:    # Divisible by a previous integer
                 return False
         return True
 
