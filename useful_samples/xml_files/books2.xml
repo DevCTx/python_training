@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<data>
+  <book title="My New Book">
+    <author>A great Author</author>
+    <year>2023</year>
+  </book>
+  <book title="Another Book">
+    <author>Same Author</author>
+    <year>2022</year>
+  </book>
+</data>
