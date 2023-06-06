@@ -1,3 +1,6 @@
+'''
+    Shows some differences between socket and requests module to send a simple request to a server
+'''
 import sys
 
 def test_socket_vs_request(MODULE_SOCKET=False):
