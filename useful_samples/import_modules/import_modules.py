@@ -13,12 +13,6 @@ except ImportError as e:
     print(e.msg)
 
 try:
-    import mymodule_in_directory
-    print(mymodule_in_directory.__name__, "found")
-except ImportError as e:
-    print(e.msg)
-
-try:
     import mymodule_in_my_site_packages_directory
     print(mymodule_in_my_site_packages_directory.__name__, "found")
 except ImportError as e:
