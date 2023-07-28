@@ -31,7 +31,7 @@ with open('contacts.csv', newline='') as csvfile:
 ###### WRITER ######
 
 with open('exported_contacts.csv','w',newline='') as csvfile:
-    writer = csv.writer(csvfile,delimiter=',')                  # Write with a come as separator
+    writer = csv.writer(csvfile,delimiter=',')                  # Write with a coma as separator
     writer.writerow(['Name','Phone'])
     writer.writerow(['mamie','555-888-001'])
     writer.writerow(['papy','555-888-002'])
